@@ -1,0 +1,47 @@
+@function obj-circle($ind, $rad, $top, $left, $color, $z-index) {
+  @return ($ind: ($top $left $rad $rad ($rad $rad $rad $rad) $color $z-index));
+}
+@function obj-sausage($ind, $width, $height, $top, $left, $color, $z-index) {
+  @return ($ind: ($top $left $width $height ($height $height $height $height) $color $z-index));
+}
+
+$map: (
+        1: (300px 0 450px 150px (0 0 150px 150px) #f1ff5e 0),
+        3: (0 0 450px 150px (150px 150px 0 0) #f1ff5e 0),
+);
+
+$map : map-merge($map, obj-circle(4, 25px, 47px, 137px, #000, 2));
+$map : map-merge($map, obj-circle(5, 25px, 47px, 287px, #000, 2));
+$map : map-merge($map, obj-circle(6, 40px, 40px, 130px, #fff, 1));
+$map : map-merge($map, obj-circle(7, 40px, 40px, 280px, #fff, 1));
+$map : map-merge($map, obj-circle(8, 15px, 42px, 150px, #fff, 3));
+$map : map-merge($map, obj-circle(9, 15px, 42px, 300px, #fff, 3));
+$map : map-merge($map, obj-circle(10, 10px, 63px, 135px, #fff, 3));
+$map : map-merge($map, obj-circle(11, 10px, 63px, 285px, #fff, 3));
+$map : map-merge($map, obj-sausage(12, 450px, 130px, 160px, 0px, #ff6052, 1));
+$map : map-merge($map, obj-sausage(13, 40px, 10px, 90px, 130px, #ffa297, 1));
+$map : map-merge($map, obj-sausage(14, 40px, 10px, 90px, 280px, #ffa297, 1));
+
+.scene {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+  background-image: -webkit-linear-gradient(top, #011428, #032a54);
+}
+
+.image {
+  @each $num, $parametr in $map {
+    &:nth-last-child(#{$num}) {
+      position: absolute;
+      top: nth(map-get($map, $num),1);
+      left: nth(map-get($map, $num),2);
+      width: nth(map-get($map, $num),3);
+      height: nth(map-get($map, $num),4);
+      border-radius: nth(map-get($map, $num),5);
+      background: nth(map-get($map, $num),6);
+      z-index: nth(map-get($map, $num),7);
+    }
+  }
+}
+
