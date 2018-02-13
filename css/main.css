@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @keyframes move {
   0% {
     transform: translate(0);
@@ -16,6 +17,8 @@
   }
 }
 
+=======
+>>>>>>> 2e5311ff5dd863c7cddf3b0bafbd59c20a642c35
 .scene {
   position: relative;
   width: 500px;
@@ -166,6 +169,7 @@
   background: #ffa297;
   z-index: 1;
 }
+<<<<<<< HEAD
 
 .image:nth-last-child(15) {
   position: absolute;
@@ -236,3 +240,5 @@
 .image:hover {
   animation: move 1s ease-in-out;
 }
+=======
+>>>>>>> 2e5311ff5dd863c7cddf3b0bafbd59c20a642c35

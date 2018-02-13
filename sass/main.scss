@@ -4,13 +4,21 @@
 @function obj-sausage($ind, $width, $height, $top, $left, $color, $z-index) {
   @return ($ind: ($top $left $width $height ($height $height $height $height) $color $z-index));
 }
+<<<<<<< HEAD
 @function obj-vesnushki($ind, $rad, $top, $left, $color, $z-index) {
   @return ($ind: ($top $left $rad $rad+5 ($rad $rad $rad $rad) $color $z-index));
 }
+=======
+
+>>>>>>> 2e5311ff5dd863c7cddf3b0bafbd59c20a642c35
 $map: (
         1: (300px 0 450px 150px (0 0 150px 150px) #f1ff5e 0),
         3: (0 0 450px 150px (150px 150px 0 0) #f1ff5e 0),
 );
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e5311ff5dd863c7cddf3b0bafbd59c20a642c35
 $map : map-merge($map, obj-circle(4, 25px, 47px, 137px, #000, 2));
 $map : map-merge($map, obj-circle(5, 25px, 47px, 287px, #000, 2));
 $map : map-merge($map, obj-circle(6, 40px, 40px, 130px, #fff, 1));
@@ -22,6 +30,7 @@ $map : map-merge($map, obj-circle(11, 10px, 63px, 285px, #fff, 3));
 $map : map-merge($map, obj-sausage(12, 450px, 130px, 160px, 0px, #ff6052, 1));
 $map : map-merge($map, obj-sausage(13, 40px, 10px, 90px, 130px, #ffa297, 1));
 $map : map-merge($map, obj-sausage(14, 40px, 10px, 90px, 280px, #ffa297, 1));
+<<<<<<< HEAD
 $map : map-merge($map, obj-sausage(14, 40px, 10px, 90px, 280px, #ffa297, 1));
 $map : map-merge($map, obj-vesnushki(15, 10px, 50px, 50px, #d4d03c, 10));
 $map : map-merge($map, obj-vesnushki(16, 10px, 50px, 100px, #d4d03c, 10));
@@ -37,6 +46,8 @@ $map : map-merge($map, obj-vesnushki(20, 10px, 70px, 360px, #d4d03c, 10));
   75%{transform:translate(50px, 0);}
   100%{transform:translate(0);}
 }
+=======
+>>>>>>> 2e5311ff5dd863c7cddf3b0bafbd59c20a642c35
 
 .scene {
   position: relative;
@@ -50,6 +61,7 @@ $map : map-merge($map, obj-vesnushki(20, 10px, 70px, 360px, #d4d03c, 10));
   @each $num, $parametr in $map {
     &:nth-last-child(#{$num}) {
       position: absolute;
+<<<<<<< HEAD
       top: nth(map-get($map, $num), 1);
       left: nth(map-get($map, $num), 2);
       width: nth(map-get($map, $num), 3);
@@ -63,5 +75,16 @@ $map : map-merge($map, obj-vesnushki(20, 10px, 70px, 360px, #d4d03c, 10));
       animation: move 1s ease-in-out;
     }
 
+=======
+      top: nth(map-get($map, $num),1);
+      left: nth(map-get($map, $num),2);
+      width: nth(map-get($map, $num),3);
+      height: nth(map-get($map, $num),4);
+      border-radius: nth(map-get($map, $num),5);
+      background: nth(map-get($map, $num),6);
+      z-index: nth(map-get($map, $num),7);
+    }
+  }
+>>>>>>> 2e5311ff5dd863c7cddf3b0bafbd59c20a642c35
 }
 
